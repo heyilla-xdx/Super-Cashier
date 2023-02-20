@@ -30,6 +30,7 @@ Flow Chart
 
 
 Function untuk menambahkan nama item, jumlah item dan harga/item
+
 def add_item():
    """
    Function untuk menambahkan item pesanan
@@ -57,6 +58,7 @@ def add_item():
      back_menu()
 
  Function untuk mengedit nama item jika mengalami kesalahan dala penginputan
+
 def update_item_name():
    """
    Function untuk mengubah atau mengedit nama item
@@ -86,6 +88,7 @@ def update_item_name():
 
 
 Function untuk mengupdate / mengedit jumlah item 
+
 def update_item_qty():
    """
    Function untuk mengubah atau mengedit jumlah item yang sudah diinput sebelumnya
@@ -107,7 +110,6 @@ def update_item_qty():
      print(f"{item} berhasil diganti jumlahnya menjadi {item_qty_new} !\n")
      back_menu()
 
-
    except ValueError:
      print("Gagal update jumlah item pada data belanja Anda")
      back_menu()
@@ -115,6 +117,7 @@ def update_item_qty():
 
 
 Function untuk mengupdate / mengedit harga/item
+
 def update_item_price():
    """
    Function untuk mengubah atau mengedit harga item yang sudah diinput sebelumnya
@@ -126,40 +129,35 @@ def update_item_price():
      item_price_new = int(input("Harga item (update) : Rp "))
      clear_screen()
 
-
      # Masukkan variabel yang sudah diinput ke dictionary baru, dan update ke dictionary keranjang
      keranjang[item][1] = item_price_new
      keranjang[item][2] = keranjang[item][0] * keranjang[item][1]
-
-
+     
      # Menampilan tabel pesanan setelah update harga item
      Transaction.show_order()
      print(f"{item} berhasil diganti menjadi Rp. {item_price_new} !\n")
      back_menu()
-
 
    except ValueError:
      print("Gagal update nama item pada data belanja Anda:{}")
      back_menu()
 
 Function untuk menghapus pesanan
+ 
  def delete_item():
    """
    Function untuk menghapus pesanan
-   """
-  
+   """ 
    print("Masukkan nama item yang ingin dihapus : ")
-
 
    try:
      #Buat variabel untuk memasukan nama item yang ingin diganti
      item = str(input("\n Nama Item : "))
      keranjang.pop(item)
 
-
      #Menampilkan daftar pesanan user
      Transaction.show_order()
-    
+   
      print (f"\nItem belanja {item} berhasil di delete !\n")
      back_menu()
   
@@ -168,13 +166,13 @@ Function untuk menghapus pesanan
      back_menu()
 
 Function untuk mengecek semua pesanan yang sudah diinput
+ 
  def check_order ():
    """
    Function untuk mengecek pesanan yang sudah ditambahkan ke dalam keranjang beserta total harganya
    """
    # Menampilan tabel pesanan user
    Transaction.show_order()
-
 
    total = 0
    for key in keranjang :
@@ -184,6 +182,7 @@ Function untuk mengecek semua pesanan yang sudah diinput
 
 
 Function untuk menghapus semua transaksi / mereset semua transaksi yang sudah diinput
+
 def reset_transaction():
    """
    Function untuk menghapus seluruh keranjang belanja / mereset transaksi
@@ -193,7 +192,6 @@ def reset_transaction():
   
    try:
      ensure_key = (int(input("\n Tekan 1 untuk menghapus seluruh keranjang belanja atau any key untuk batal : ")))
-
 
      # Hapus dictionary dengan .clear
      keranjang.clear()
@@ -206,12 +204,12 @@ def reset_transaction():
      back_menu()
 
 Function untuk menjumlahkan semua pesanan yang sudah diinput dan mengecek diskon yang didapat
+
 def total_price():
    """
    Function untuk melihat jumlah semua pesanan yang telah dimasukkan ke dalam keranjang,
    melihat total pesanan dan melihat apakah mendapatkan diskon atau tidak
    """
-
 
    # Menghitung total belanjaan
    total = 0
@@ -220,7 +218,6 @@ def total_price():
      total = total + keranjang[key][2]
   
    Transaction.show_order()
-
 
    # Conditional for discount
    if total >= 500_000:
