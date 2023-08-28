@@ -18,7 +18,7 @@ User dapat melihat total harga pesanan yang telah dibeli dan mendapatkan diskon 
  
 Flow Chart
 
-
+![Flowchart Super Cashier App](https://github.com/heyilla-xdx/Super-Cashier/assets/123818675/135baa84-fc17-474f-bfb0-d5c8dc6bfdca)
 
 
 
